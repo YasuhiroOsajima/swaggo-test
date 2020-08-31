@@ -1,6 +1,4 @@
-FROM golang:1.14.7-alpine3.12
-
-ENV GO111MODULE=on
+FROM alpine:latest
 
 ADD ./server /go/src/
 

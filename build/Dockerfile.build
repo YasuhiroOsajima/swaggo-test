@@ -1,0 +1,12 @@
+FROM golang:1.14.7-alpine3.12
+
+WORKDIR /go/src
+
+ENV GO111MODULE=on
+
+RUN apk add --no-cache alpine-sdk git \
+    && git clone https://github.com/YasuhiroOsajima/swaggo-test.git \
+    && cd swaggo-test \
+    && go build -o build/server cmd/main.go
+
+COPY build/server .
