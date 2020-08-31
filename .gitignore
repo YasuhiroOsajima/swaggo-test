@@ -6,3 +6,4 @@ go.sum
 go.sum*tmp
 
 build/server
+deployments/mysql/data/*
