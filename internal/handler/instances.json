@@ -1,0 +1,12 @@
+[
+  {
+    "uuid": "5af17e40-1b3f-437f-b63d-adf80d3bdffa",
+    "name": "web01",
+    "owner": "bd64e65e-e972-11ea-842a-0a15bbaed69b"
+  },
+  {
+    "uuid": "eda4ed6c-6929-4b92-8063-659708e58805",
+    "name": "mysql01",
+    "owner": "fba89220-4eb3-4c6e-9990-f2dea16fb928"
+  }
+]

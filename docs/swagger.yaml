@@ -1,0 +1,17 @@
+info:
+  contact: {}
+  license: {}
+  title: gin-swagger sample
+  version: "0.1"
+paths:
+  /instances:
+    get:
+      consumes:
+      - text/plain
+      description: A list of instances
+      produces:
+      - application/json
+      responses:
+        "200": {}
+      summary: Get instances info
+swagger: "2.0"

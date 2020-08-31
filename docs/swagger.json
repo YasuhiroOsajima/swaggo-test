@@ -1,0 +1,26 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "gin-swagger sample",
+        "contact": {},
+        "license": {},
+        "version": "0.1"
+    },
+    "paths": {
+        "/instances": {
+            "get": {
+                "description": "A list of instances",
+                "consumes": [
+                    "text/plain"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get instances info",
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    }
+}
