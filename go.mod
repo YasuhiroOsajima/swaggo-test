@@ -11,12 +11,12 @@ require (
 	github.com/go-playground/validator/v10 v10.3.0 // indirect
 	github.com/golang/protobuf v1.4.2 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
-	github.com/mailru/easyjson v0.7.2 // indirect
+	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/swaggo/swag v1.6.7
 	github.com/urfave/cli/v2 v2.2.0 // indirect
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
+	golang.org/x/net v0.0.0-20200822124328-c89045814202 // indirect
 	golang.org/x/sys v0.0.0-20200806125547-5acd03effb82 // indirect
-	golang.org/x/tools v0.0.0-20200806234136-990129eca547 // indirect
+	golang.org/x/tools v0.0.0-20200828161849-5deb26317202 // indirect
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 )

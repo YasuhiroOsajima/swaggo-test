@@ -7,12 +7,15 @@ RUN mkdir /gobuild
 RUN apk add --no-cache alpine-sdk git \
     && git clone https://github.com/YasuhiroOsajima/swaggo-test.git \
     && cd swaggo-test \
-    && go build -o /gobuild/server cmd/main.go
+    && go build -o build/server cmd/main.go \
+    && go get -u github.com/swaggo/swag/cmd/swag \
+    && swag init -g cmd/main.go
 
 # run
 FROM alpine:latest
 
-COPY --from=builder /gobuild/server /server
+COPY --from=builder /go/src/swaggo-test /swaggo-test/
 EXPOSE 3389
 
-CMD ["/server"]
+WORKDIR /swaggo-test
+CMD ["build/server"]

@@ -13,8 +13,9 @@ import (
 // @title gin-swagger sample
 // @version 0.1
 func main() {
-	var Server = "150.95.131.71"
-	var Port = "3389"
+	var Server = os.Getenv("SERVER")
+	var Port = os.Getenv("PORT")
+
 	var Router *gin.Engine
 	Router = gin.Default()
 
