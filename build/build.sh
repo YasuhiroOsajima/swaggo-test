@@ -2,7 +2,7 @@
 # bash build/build.sh
 
 # go build
-go build -o build/server cmd/main.go
+docker build -t build-swaggo-test:0.1 -f build/Dockerfile.build
 
 # docker build
 docker build -t swaggo-test:0.1 -f build/Dockerfile
