@@ -6,6 +6,8 @@ services:
     container_name: swaggo-test
     ports:
       - 3389:3389
+    environment:
+      - server.env
 
   # MySQL
   db:
