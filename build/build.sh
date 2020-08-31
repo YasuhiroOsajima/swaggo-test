@@ -5,4 +5,4 @@
 go build -o build/server cmd/main.go
 
 # docker build
-docker build -f build/Dockerfile
+docker build -t swaggo-test:0.1 -f build/Dockerfile
