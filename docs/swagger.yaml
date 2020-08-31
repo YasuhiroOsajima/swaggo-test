@@ -4,6 +4,16 @@ info:
   title: gin-swagger sample
   version: "0.1"
 paths:
+  /images:
+    get:
+      consumes:
+      - text/plain
+      description: A list of images
+      produces:
+      - application/json
+      responses:
+        "200": {}
+      summary: Get images info
   /instances:
     get:
       consumes:

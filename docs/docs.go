@@ -25,6 +25,21 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/images": {
+            "get": {
+                "description": "A list of images",
+                "consumes": [
+                    "text/plain"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get images info",
+                "responses": {
+                    "200": {}
+                }
+            }
+        },
         "/instances": {
             "get": {
                 "description": "A list of instances",

@@ -19,6 +19,7 @@ func main() {
 	Router = gin.Default()
 
 	Router.GET("/instances", h.InstanceHandler)
+	Router.GET("/images", h.ImageHandler)
 
 	url := ginSwagger.URL("http://" + Server + ":" + Port + "/swagger/doc.json")
 	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
