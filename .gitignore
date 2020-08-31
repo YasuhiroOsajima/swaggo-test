@@ -4,3 +4,5 @@
 
 go.sum
 go.sum*tmp
+
+build/server
