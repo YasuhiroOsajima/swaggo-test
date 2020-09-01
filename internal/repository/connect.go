@@ -24,7 +24,7 @@ func init() {
 
 	for i := 0; i < 5; i++ {
 		db, err = sqlx.Connect("mysql", user+":"+password+"@tcp("+server+":"+port+")/practice")
-		if strings.Index(err.Error(), waitMsg) == notInclude {
+		if strings.Index(err.Error(), waitMsg) != notInclude {
 			log.Fatalf("DB connect failed. err: %s", err)
 			time.Sleep(time.Second * 10)
 			continue
