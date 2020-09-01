@@ -15,7 +15,7 @@ func init() {
 	port := os.Getenv("DBPORT")
 
 	var err error
-	db, err = sqlx.Connect("mysql", "root:root@"+server+":"+port+"/practice")
+	db, err = sqlx.Connect("mysql", "root:root@tcp("+server+":"+port+")/practice")
 	if err != nil {
 		log.Fatalf("DB connect failed. err: %s", err)
 		panic(err)
