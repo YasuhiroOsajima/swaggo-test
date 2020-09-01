@@ -1,11 +1,11 @@
 package handler
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
 
 	"github.com/gin-gonic/gin"
+
+	"swaggo_sample/internal/repository"
 )
 
 type Instance struct {
@@ -22,14 +22,19 @@ type Instance struct {
 // @Success 200
 // @Router /instances [get]
 func InstanceHandler(c *gin.Context) {
-	bytes, err := ioutil.ReadFile("internal/handler/instances.json")
+	db := repository.NewInstanceRepository()
+	instancelist, err := db.FindAll()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	var instances []Instance
-	if err := json.Unmarshal(bytes, &instances); err != nil {
-		log.Fatal(err)
+	for _, i := range instancelist {
+		var ins Instance
+		ins.Uuid = i.Uuid
+		ins.Name = i.Name
+		ins.Owner = i.Owner
+		instances = append(instances, ins)
 	}
 
 	c.JSON(200, instances)
