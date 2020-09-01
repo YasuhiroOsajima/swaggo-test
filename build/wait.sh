@@ -1,4 +1,4 @@
-# !/bin/.sh
+#!/bin/sh
 
 BIN_PATH=/swaggo-test/build/server
 MYSQL_SERVER=127.0.0.1
