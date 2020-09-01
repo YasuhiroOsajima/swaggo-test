@@ -1,11 +1,11 @@
 package handler
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
 
 	"github.com/gin-gonic/gin"
+
+	"swaggo_sample/internal/repository"
 )
 
 type Image struct {
@@ -22,14 +22,19 @@ type Image struct {
 // @Success 200
 // @Router /images [get]
 func ImageHandler(c *gin.Context) {
-	bytes, err := ioutil.ReadFile("internal/handler/images.json")
+	db := repository.NewImageRepository()
+	imagelist, err := db.FindAll()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	var images []Image
-	if err := json.Unmarshal(bytes, &images); err != nil {
-		log.Fatal(err)
+	for _, i := range imagelist {
+		var img Image
+		img.Uuid = i.Uuid
+		img.Name = i.Name
+		img.Owner = i.Owner
+		images = append(images, img)
 	}
 
 	c.JSON(200, images)
