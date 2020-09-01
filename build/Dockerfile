@@ -16,7 +16,7 @@ FROM alpine:latest
 
 RUN apk update \
     && apk add mysql-client
-COPY ./wait.sh /
+COPY ./wait.sh /var/lib/
 
 COPY --from=builder /go/src/swaggo-test /swaggo-test/
 EXPOSE 3389

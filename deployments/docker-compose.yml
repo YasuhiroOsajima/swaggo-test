@@ -10,7 +10,7 @@ services:
       - mysql_host
     ports:
       - 3389:3389
-    entrypoint: "sh /wait.sh"
+    entrypoint: "sh /var/lib/wait.sh"
 
   # MySQL
   mysql_host:
