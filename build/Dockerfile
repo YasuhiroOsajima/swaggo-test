@@ -14,8 +14,11 @@ RUN apk add --no-cache alpine-sdk git \
 # run
 FROM alpine:latest
 
+RUN apk update \
+    && apk add mysql-client
+ADD wait.sh /
+
 COPY --from=builder /go/src/swaggo-test /swaggo-test/
 EXPOSE 3389
 
-WORKDIR /swaggo-test
-CMD ["build/server"]
+CMD ["/swaggo-test/build/server"]

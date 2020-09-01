@@ -10,6 +10,7 @@ services:
       - mysql_host
     ports:
       - 3389:3389
+    entrypoint: "/wait.sh /swaggo-test/build/server"
 
   # MySQL
   mysql_host:
