@@ -3,7 +3,8 @@
 BIN_PATH=/swaggo-test/build/server
 MYSQL_SERVER=mysql_host
 
-for ((i=0;i<5;i++)); do
+for i in `seq 0 20`
+do
   mysqladmin ping -h ${MYSQL_SERVER} --silent
   if [ $? -eq 0 ]; then
     echo 'mysql server became connectable.'
